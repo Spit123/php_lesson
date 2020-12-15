@@ -445,16 +445,58 @@
         }
         //43
         echo "<br/><hr>Задача 43<br/>";
+        $array1 = [ 1, 2, 3, 4, 5 ];
+        $array2 = [ 3, 4, 5, 6, 7 ];
+        $result = array_intersect($array1, $array2);
+        foreach ($result as $elem) {
+            if ($result[2] == $elem) {
+                echo "[ ".$elem.", ";
+            } elseif ($elem == $result[4]) {
+                echo $elem." ]";
+            } else {
+                echo $elem.", ";
+            }
+        }
         //44
         echo "<br/><hr>Задача 44<br/>";
+        $array1 = [ 1, 2, 3, 4, 5 ];
+        $array2 = [ 3, 4, 5, 6, 7 ];
+        $result = array_diff($array1, $array2);
+        foreach ($result as $elem) {
+                echo $elem.", ";
+        }
         //45
         echo "<br/><hr>Задача 45<br/>";
+        $arr45 = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        echo array_sum($arr45);
         //46
         echo "<br/><hr>Задача 46<br/>";
+        $array3 = range(1,26);
+        $array4 = range('a', 'z');
+        $result46 = array_combine($array4, $array3);
+        echo "[ ";
+        foreach ($result46 as $keys=>$elem) {
+            echo $keys." => ".$elem.", ";
+        }
         //47
-        echo "<br/><hr>Задача 46<br/>";
+        echo "<br/><hr>Задача 47<br/>";
+        $arr47 = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
+        $result = array_chunk($arr47, 3);
+        var_dump($result);
         //48
-        echo "<br/><hr>Задача 46<br/>";
+        echo "<br/><hr>Задача 48<br/>";
+        $arr48 = [ 1, 2, 4, 5, 5 ];
+        $max = 0;
+        $max2 = 0;
+        for ($i = 0; $i < count($arr48); $i++) {
+            if ($arr48[$i] > $max) {
+                $max2 = $max;
+                $max = $arr48[$i];
+            } elseif ($arr48[$i] < $max and $arr48[$i] > $max2) {
+                $max2 = $arr48[$i];
+            }
+        }
+        echo $max2;
     ?>
 </body>
 </html>
