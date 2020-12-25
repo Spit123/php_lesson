@@ -103,17 +103,25 @@
         echo arrSum($array6);
         //7
         echo "<br/><hr>Задача 7<br/>";
-        $arr = [];
-        $num = 0;
-        for ($i=0; $i < 3; $i++) {
-            for ($j=0; $j < 3; $j++) {
-                $num++;
-                $arr2[$j] = $num;
+        $n = 1;
+        for($i = 0; $i < 3; $i++) {
+            for($j = 0; $j < 3; $j++, $n++) {
+                $arr7[$i][$j] = $n;
             }
-        $arr[$i] = $arr2;
         }
-
-        var_dump($arr);
+        echo "[ ";
+        foreach ($arr7 as $element) {
+            foreach ($element as $elem) {
+                if ($element[0] == $elem) {
+                    echo "[ ".$elem.", ";
+                } elseif ($elem == $element[count($element)-1]) {
+                    echo $elem." ]";
+                } else {
+                    echo $elem.", ";
+                }
+            }
+        }
+        echo " ]";
     ?>
 </body>
 </html>
